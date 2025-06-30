@@ -1,40 +1,40 @@
-<!-- Angular Material Media Streaming App -->
+<!-- Modern StreamHub - Premium Media Streaming Platform -->
 <div class="media-container">
-  <!-- Material Toolbar -->
-  <mat-toolbar color="primary" class="mat-elevation-z4">
+  <!-- Modern Glass Toolbar -->
+  <mat-toolbar color="primary" class="mat-elevation-z0">
     <mat-toolbar-row>
-      <!-- Logo -->
+      <!-- Premium Logo -->
       <span class="logo">🎵 StreamHub</span>
       
-      <!-- Search -->
+      <!-- Search Bar -->
       <span class="spacer"></span>
       <mat-form-field appearance="outline" class="search-field">
-        <mat-label>Search music, videos, podcasts...</mat-label>
-        <input matInput>
+        <mat-label>Search music, podcasts, artists...</mat-label>
+        <input matInput placeholder="What do you want to listen to?">
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
       
-      <!-- User Actions -->
+      <!-- Premium Action Buttons -->
       <span class="spacer"></span>
-      <button mat-icon-button>
+      <button mat-icon-button matTooltip="Download">
         <mat-icon>download</mat-icon>
       </button>
-      <button mat-icon-button>
-        <mat-icon>favorite</mat-icon>
+      <button mat-icon-button matTooltip="Notifications">
+        <mat-icon>notifications</mat-icon>
       </button>
-      <button mat-icon-button>
+      <button mat-icon-button matTooltip="Profile">
         <mat-icon>account_circle</mat-icon>
       </button>
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <!-- Main Layout with Sidenav -->
+  <!-- Main Layout with Premium Sidenav -->
   <mat-sidenav-container class="sidenav-container">
-    <!-- Sidebar -->
+    <!-- Enhanced Sidebar -->
     <mat-sidenav mode="side" opened class="sidenav">
       <mat-nav-list>
         <!-- Discovery Section -->
-        <h3 mat-subheader>Discovery</h3>
+        <h3 mat-subheader>Discover</h3>
         <mat-list-item routerLinkActive="active">
           <mat-icon matListItemIcon>home</mat-icon>
           <span matListItemTitle>Home</span>
@@ -45,7 +45,14 @@
         </mat-list-item>
         <mat-list-item>
           <mat-icon matListItemIcon>trending_up</mat-icon>
-          <span matListItemTitle>Top Charts</span>
+          <div matListItemTitle>
+            Trending
+            <span class="modern-badge">HOT</span>
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>radio</mat-icon>
+          <span matListItemTitle>Radio</span>
         </mat-list-item>
 
         <mat-divider></mat-divider>
@@ -55,55 +62,67 @@
         <mat-list-item>
           <mat-icon matListItemIcon>favorite</mat-icon>
           <span matListItemTitle>Liked Songs</span>
+          <span matListItemLine>143 songs</span>
         </mat-list-item>
         <mat-list-item>
           <mat-icon matListItemIcon>queue_music</mat-icon>
           <span matListItemTitle>Playlists</span>
+          <span matListItemLine>8 playlists</span>
         </mat-list-item>
         <mat-list-item>
           <mat-icon matListItemIcon>download_done</mat-icon>
           <span matListItemTitle>Downloads</span>
+          <span matListItemLine>25 songs</span>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>history</mat-icon>
+          <span matListItemTitle>Recently Played</span>
         </mat-list-item>
 
         <mat-divider></mat-divider>
 
-        <!-- Recently Played -->
-        <h3 mat-subheader>Recently Played</h3>
+        <!-- Made For You -->
+        <h3 mat-subheader>Made For You</h3>
         <mat-list-item>
-          <mat-icon matListItemIcon>album</mat-icon>
-          <span matListItemTitle>Epic Playlist</span>
-          <span matListItemLine>25 songs</span>
+          <mat-icon matListItemIcon style="color: #1db954;">album</mat-icon>
+          <span matListItemTitle>Daily Mix 1</span>
+          <span matListItemLine>Electronic, Pop</span>
         </mat-list-item>
         <mat-list-item>
-          <mat-icon matListItemIcon>album</mat-icon>
-          <span matListItemTitle>Chill Vibes</span>
-          <span matListItemLine>18 songs</span>
+          <mat-icon matListItemIcon style="color: #8b5cf6;">album</mat-icon>
+          <span matListItemTitle>Discover Weekly</span>
+          <span matListItemLine>New • 30 songs</span>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon style="color: #f59e0b;">album</mat-icon>
+          <span matListItemTitle>Release Radar</span>
+          <span matListItemLine>Fresh releases</span>
         </mat-list-item>
       </mat-nav-list>
     </mat-sidenav>
 
-    <!-- Main Content -->
+    <!-- Premium Main Content -->
     <mat-sidenav-content class="main-content">
       <div class="content-padding">
-        <!-- Welcome Section -->
+        <!-- Premium Welcome Section -->
         <div class="welcome-section">
-          <h1 class="mat-display-1">Good evening</h1>
-          <p class="mat-body-1 text-secondary">Ready to discover amazing music?</p>
+          <h1 class="gradient-text">Good evening</h1>
+          <p>Ready to discover your next favorite song?</p>
         </div>
 
-        <!-- Quick Access Cards -->
+        <!-- Quick Access Premium Cards -->
         <div class="quick-access-grid">
-          <mat-card class="quick-access-card" *ngFor="let item of quickAccessItems">
+          <mat-card class="quick-access-card glass-card" *ngFor="let item of quickAccessItems">
             <mat-card-content>
               <div class="card-content-flex">
                 <div class="album-art">
-                  <mat-icon [style.color]="item.color">{{item.icon}}</mat-icon>
+                  <mat-icon [style.color]="'white'">{{item.icon}}</mat-icon>
                 </div>
                 <div class="card-text">
-                  <h3 class="mat-h3">{{item.title}}</h3>
-                  <p class="mat-body-2 text-secondary">{{item.subtitle}}</p>
+                  <h3>{{item.title}}</h3>
+                  <p>{{item.subtitle}}</p>
                 </div>
-                <button mat-fab mini color="primary" class="play-button">
+                <button mat-fab mini color="accent" class="play-button pulse-glow">
                   <mat-icon>play_arrow</mat-icon>
                 </button>
               </div>
@@ -111,39 +130,41 @@
           </mat-card>
         </div>
 
-        <!-- Featured Content -->
+        <!-- Featured Content Premium -->
         <div class="section">
-          <h2 class="mat-h2 section-title">Featured This Week</h2>
+          <h2 class="section-title">Featured This Week</h2>
           <div class="cards-grid">
-            <mat-card class="media-card" *ngFor="let item of featuredItems">
+            <mat-card class="media-card glass-card" *ngFor="let item of featuredItems">
               <img mat-card-image [src]="item.image" [alt]="item.title">
               <mat-card-content>
                 <mat-card-title>{{item.title}}</mat-card-title>
                 <mat-card-subtitle>{{item.artist}}</mat-card-subtitle>
-                <p class="mat-body-2">{{item.description}}</p>
+                <p>{{item.description}}</p>
               </mat-card-content>
               <mat-card-actions>
-                <button mat-raised-button color="primary">
+                <button mat-raised-button color="accent" class="media-button">
                   <mat-icon>play_arrow</mat-icon>
-                  Play
+                  Play Now
                 </button>
-                <button mat-button>
+                <button mat-stroked-button>
                   <mat-icon>favorite_border</mat-icon>
                   Like
                 </button>
-                <button mat-button>
+                <button mat-icon-button>
                   <mat-icon>share</mat-icon>
-                  Share
                 </button>
               </mat-card-actions>
             </mat-card>
           </div>
         </div>
 
-        <!-- Audio Player Section -->
+        <!-- Audio Player Premium Section -->
         <div class="section">
-          <h2 class="mat-h2 section-title">Audio Player</h2>
-          <mat-card class="media-card">
+          <h2 class="section-title">
+            Audio Experience
+            <span class="modern-badge">HD QUALITY</span>
+          </h2>
+          <mat-card class="media-card glass-card">
             <mat-card-content>
               <div class="audio-player">
                 <audio controls style="width: 100%;">
@@ -152,19 +173,22 @@
                 </audio>
               </div>
               
-              <!-- Waveform Container -->
+              <!-- Premium Waveform Container -->
               <div class="waveform-container">
-                <p class="mat-body-1">Audio Waveform Visualization</p>
-                <div id="waveform" style="height: 100px; background: #f5f5f5; border-radius: 4px; margin-top: 16px;"></div>
+                <p>🎵 Premium Audio Waveform Visualization</p>
+                <div id="waveform" style="height: 120px; background: var(--accent-bg); border-radius: 12px; margin-top: 16px;"></div>
               </div>
             </mat-card-content>
           </mat-card>
         </div>
 
-        <!-- Video Player Section -->
+        <!-- Video Player Premium Section -->
         <div class="section">
-          <h2 class="mat-h2 section-title">Video Player</h2>
-          <mat-card class="media-card">
+          <h2 class="section-title">
+            Video Streaming
+            <span class="modern-badge">4K READY</span>
+          </h2>
+          <mat-card class="media-card glass-card">
             <mat-card-content>
               <div class="video-player">
                 <video 
@@ -172,7 +196,8 @@
                   controls 
                   preload="auto"
                   width="100%"
-                  height="400"
+                  height="450"
+                  style="border-radius: 16px;"
                   data-setup='{}'>
                   <source src="assets/sample-video.mp4" type="video/mp4">
                   <p class="vjs-no-js">
@@ -183,70 +208,111 @@
               </div>
             </mat-card-content>
             <mat-card-actions>
-              <button mat-raised-button color="primary">
+              <button mat-raised-button color="accent" class="media-button">
                 <mat-icon>play_arrow</mat-icon>
-                Play
+                Watch Now
               </button>
-              <button mat-button>
+              <button mat-stroked-button>
                 <mat-icon>fullscreen</mat-icon>
                 Fullscreen
               </button>
-              <button mat-button>
-                <mat-icon>volume_up</mat-icon>
-                Volume
+              <button mat-stroked-button>
+                <mat-icon>hd</mat-icon>
+                Quality
               </button>
             </mat-card-actions>
           </mat-card>
         </div>
 
-        <!-- Music Library -->
+        <!-- Premium Music Library -->
         <div class="section">
-          <h2 class="mat-h2 section-title">Your Music Library</h2>
-          <mat-card class="media-card">
+          <h2 class="section-title">Your Music Collection</h2>
+          <mat-card class="media-card glass-card">
             <mat-card-content>
               <mat-list>
-                <mat-list-item *ngFor="let song of musicLibrary">
-                  <mat-icon matListItemIcon>music_note</mat-icon>
-                  <div matListItemTitle>{{song.title}}</div>
-                  <div matListItemLine>{{song.artist}} • {{song.duration}}</div>
-                  <button mat-icon-button matListItemMeta>
+                <mat-list-item *ngFor="let song of musicLibrary; let i = index">
+                  <mat-icon matListItemIcon [style.color]="i % 2 === 0 ? '#1db954' : '#8b5cf6'">music_note</mat-icon>
+                  <div matListItemTitle [style.color]="'#ffffff'" [style.font-weight]="'600'">{{song.title}}</div>
+                  <div matListItemLine [style.color]="'#e0e0e0'">{{song.artist}} • {{song.duration}}</div>
+                  <button mat-icon-button matListItemMeta color="accent">
                     <mat-icon>play_arrow</mat-icon>
+                  </button>
+                  <button mat-icon-button matListItemMeta [style.color]="'#b3b3b3'">
+                    <mat-icon>favorite_border</mat-icon>
                   </button>
                 </mat-list-item>
               </mat-list>
             </mat-card-content>
           </mat-card>
         </div>
+
+        <!-- Trending Now Section -->
+        <div class="section">
+          <h2 class="section-title">
+            Trending Now
+            <span class="modern-badge">LIVE</span>
+          </h2>
+          <div class="cards-grid">
+            <mat-card class="media-card glass-card" *ngFor="let item of trendingItems">
+              <img mat-card-image [src]="item.image" [alt]="item.title">
+              <mat-card-content>
+                <mat-card-title>{{item.title}}</mat-card-title>
+                <mat-card-subtitle>{{item.artist}} • {{item.plays}} plays</mat-card-subtitle>
+                <p>{{item.description}}</p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-raised-button color="accent" class="media-button">
+                  <mat-icon>trending_up</mat-icon>
+                  Play Trending
+                </button>
+                <button mat-stroked-button>
+                  <mat-icon>playlist_add</mat-icon>
+                  Add to Playlist
+                </button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 
-  <!-- Bottom Player Bar -->
-  <mat-toolbar class="bottom-player">
+  <!-- Premium Bottom Player Bar -->
+  <mat-toolbar class="bottom-player mat-elevation-z8">
     <div class="player-controls">
+      <button mat-icon-button>
+        <mat-icon>shuffle</mat-icon>
+      </button>
       <button mat-icon-button>
         <mat-icon>skip_previous</mat-icon>
       </button>
-      <button mat-fab mini color="primary">
+      <button mat-fab mini color="accent" class="pulse-glow">
         <mat-icon>play_arrow</mat-icon>
       </button>
       <button mat-icon-button>
         <mat-icon>skip_next</mat-icon>
       </button>
+      <button mat-icon-button>
+        <mat-icon>repeat</mat-icon>
+      </button>
     </div>
     
     <div class="track-info">
       <div class="track-details">
-        <span class="mat-body-1">Currently Playing Song</span>
-        <span class="mat-body-2 text-secondary">Artist Name</span>
+        <span class="mat-h4 gradient-text">Now Playing: Epic Anthem</span>
+        <span class="mat-body-2">Superstar Artist • Premium Quality</span>
       </div>
     </div>
     
     <div class="volume-controls">
+      <mat-icon>queue_music</mat-icon>
       <mat-icon>volume_up</mat-icon>
       <mat-slider min="0" max="100" step="1" class="volume-slider">
-        <input matSliderThumb value="50">
+        <input matSliderThumb value="75">
       </mat-slider>
+      <button mat-icon-button>
+        <mat-icon>fullscreen</mat-icon>
+      </button>
     </div>
   </mat-toolbar>
 </div>

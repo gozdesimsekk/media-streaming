@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-root',
@@ -29,46 +30,73 @@ import { MatDividerModule } from '@angular/material/divider';
     MatFormFieldModule,
     MatInputModule,
     MatSliderModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTooltipModule
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class AppComponent {
-  title = 'StreamHub - Angular Media Streaming';
+  title = 'StreamHub - Premium Music Streaming';
 
   quickAccessItems = [
-    { title: 'Liked Songs', subtitle: '143 songs', icon: 'favorite', color: '#4caf50' },
-    { title: 'Discover Weekly', subtitle: '30 songs', icon: 'explore', color: '#9c27b0' },
-    { title: 'Recently Played', subtitle: 'Mix', icon: 'history', color: '#f44336' }
+    { title: 'Liked Songs', subtitle: '143 songs • 8.5 hours', icon: 'favorite', color: '#1db954' },
+    { title: 'Discover Weekly', subtitle: '30 fresh tracks', icon: 'explore', color: '#8b5cf6' },
+    { title: 'Daily Mix 1', subtitle: 'Pop, Electronic vibes', icon: 'history', color: '#f59e0b' }
   ];
 
   featuredItems = [
     {
-      title: 'Epic Playlist',
+      title: 'Ultimate Summer Hits',
       artist: 'Various Artists',
-      description: 'The best music for your daily life',
-      image: 'https://via.placeholder.com/300x300/3f51b5/ffffff?text=Epic+Playlist'
+      description: 'The hottest tracks to soundtrack your summer adventures',
+      image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop'
     },
     {
-      title: 'Chill Vibes',
-      artist: 'Relaxation Station',
-      description: 'Perfect background music for work and study',
-      image: 'https://via.placeholder.com/300x300/009688/ffffff?text=Chill+Vibes'
+      title: 'Midnight Chill',
+      artist: 'Ambient Collective',
+      description: 'Perfect ambient soundscapes for late night focus sessions',
+      image: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=400&h=400&fit=crop'
     },
     {
-      title: 'Workout Hits',
+      title: 'Workout Beast Mode',
       artist: 'Energy Mix',
-      description: 'High energy tracks to boost your workout',
-      image: 'https://via.placeholder.com/300x300/ff5722/ffffff?text=Workout+Hits'
+      description: 'High-octane beats to fuel your most intense workouts',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop'
     }
   ];
 
   musicLibrary = [
-    { title: 'Song One', artist: 'Artist A', duration: '3:45' },
-    { title: 'Amazing Track', artist: 'Artist B', duration: '4:12' },
-    { title: 'Favorite Song', artist: 'Artist C', duration: '3:28' },
-    { title: 'Background Music', artist: 'Artist D', duration: '5:03' },
-    { title: 'Chill Beat', artist: 'Artist E', duration: '3:56' }
+    { title: 'Blinding Lights', artist: 'The Weeknd', duration: '3:20' },
+    { title: 'Shape of You', artist: 'Ed Sheeran', duration: '3:53' },
+    { title: 'Someone Like You', artist: 'Adele', duration: '4:45' },
+    { title: 'Watermelon Sugar', artist: 'Harry Styles', duration: '2:54' },
+    { title: 'Levitating', artist: 'Dua Lipa', duration: '3:23' },
+    { title: 'Good 4 U', artist: 'Olivia Rodrigo', duration: '2:58' },
+    { title: 'Stay', artist: 'The Kid LAROI & Justin Bieber', duration: '2:21' }
+  ];
+
+  trendingItems = [
+    {
+      title: 'Viral TikTok Hits',
+      artist: 'Trending Now',
+      plays: '2.4M',
+      description: 'The songs everyone is dancing to right now',
+      image: 'https://images.unsplash.com/photo-1611339555312-e607c8352fd7?w=400&h=400&fit=crop'
+    },
+    {
+      title: 'New Music Friday',
+      artist: 'Fresh Releases',
+      plays: '1.8M',
+      description: 'This week\'s biggest new releases from top artists',
+      image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop'
+    },
+    {
+      title: 'Global Top 50',
+      artist: 'World Charts',
+      plays: '5.2M',
+      description: 'The most played songs around the world today',
+      image: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400&h=400&fit=crop'
+    }
   ];
 }
