@@ -1,0 +1,280 @@
+// Angular Material Custom Styles for StreamHub
+
+.media-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// Toolbar Styles
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 24px;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  .search-field {
+    width: 400px;
+    margin: 0 24px;
+    
+    .mat-mdc-form-field-wrapper {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+    }
+    
+    .mat-mdc-text-field-wrapper {
+      border-radius: 24px;
+    }
+  }
+}
+
+// Sidenav Container
+.sidenav-container {
+  flex: 1;
+  
+  .sidenav {
+    width: 280px;
+    padding: 16px 0;
+    
+    .mat-mdc-list-item {
+      border-radius: 8px;
+      margin: 4px 16px;
+      
+      &.active {
+        background-color: rgba(63, 81, 181, 0.1);
+        
+        .mat-mdc-list-item-title {
+          color: #3f51b5;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  
+  .main-content {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    
+    .content-padding {
+      padding: 24px;
+    }
+  }
+}
+
+// Welcome Section
+.welcome-section {
+  margin-bottom: 32px;
+  
+  .text-secondary {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+// Quick Access Grid
+.quick-access-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+  
+  .quick-access-card {
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card-content-flex {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      
+      .album-art {
+        width: 64px;
+        height: 64px;
+        border-radius: 8px;
+        background: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        mat-icon {
+          font-size: 32px;
+          width: 32px;
+          height: 32px;
+        }
+      }
+      
+      .card-text {
+        flex: 1;
+      }
+      
+      .play-button {
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+    }
+    
+    &:hover .play-button {
+      opacity: 1;
+    }
+  }
+}
+
+// Section Styles
+.section {
+  margin-bottom: 48px;
+  
+  .section-title {
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+}
+
+// Cards Grid
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  
+  .media-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+    
+    .mat-mdc-card-image {
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+}
+
+// Audio & Video Player Styles
+.audio-player, .video-player {
+  margin-bottom: 16px;
+  
+  audio, video {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Bottom Player Bar
+.bottom-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  z-index: 1000;
+  
+  .player-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 200px;
+  }
+  
+  .track-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .track-details {
+      text-align: center;
+      
+      .text-secondary {
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+  
+  .volume-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 200px;
+    justify-content: flex-end;
+    
+    .volume-slider {
+      width: 100px;
+    }
+  }
+}
+
+// Main content bottom margin to account for fixed player
+.main-content {
+  margin-bottom: 80px;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .search-field {
+    width: 200px !important;
+  }
+  
+  .quick-access-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bottom-player {
+    flex-direction: column;
+    height: auto;
+    padding: 16px;
+    
+    .player-controls,
+    .track-info,
+    .volume-controls {
+      min-width: auto;
+      width: 100%;
+      justify-content: center;
+      margin: 8px 0;
+    }
+  }
+  
+  .main-content {
+    margin-bottom: 120px;
+  }
+}
+
+// Dark theme support
+@media (prefers-color-scheme: dark) {
+  .main-content {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+  }
+  
+  .welcome-section .text-secondary {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .bottom-player {
+    background: #2d2d2d;
+    border-top-color: #404040;
+    color: white;
+  }
+}

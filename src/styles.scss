@@ -1,1 +1,98 @@
+// Angular Material Core
+@import '@angular/material/prebuilt-themes/azure-blue.css';
+
+// Custom Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+// Global Styles
+html, body { 
+  height: 100%; 
+  margin: 0; 
+  font-family: 'Roboto', sans-serif;
+}
+
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
 /* You can add global styles to this file, and also import other style files */
+
+/* Custom Media Player Styles with Material Design */
+.media-container {
+  background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+  min-height: 100vh;
+  color: white;
+  padding: 24px;
+}
+
+.media-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin: 16px 0;
+  overflow: hidden;
+}
+
+.media-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16), 0 4px 8px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.media-button {
+  /* Material button stilleri Angular Material tarafından sağlanacak */
+}
+
+.waveform-container {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 24px;
+  margin: 16px 0;
+  border: 1px solid #e0e0e0;
+}
+
+/* Video.js Material Theme */
+.video-js {
+  font-family: 'Roboto', sans-serif;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-js .vjs-big-play-button {
+  background-color: rgba(63, 81, 181, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 32px;
+}
+
+/* Material Design Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3f51b5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #303f9f;
+}
+
+/* Material Design Animations */
+.mat-card {
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mat-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16), 0 4px 8px rgba(0, 0, 0, 0.12) !important;
+}
